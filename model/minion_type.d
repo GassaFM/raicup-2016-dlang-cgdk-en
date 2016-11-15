@@ -8,12 +8,17 @@ import model.minion;
 enum MinionType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * A melee fighter. No so strong as orc warrior, but still dangerous.
      */
-    OrcWoodcutter,
+    orcWoodcutter,
 
     /**
      * A magical creature with sharp darts.
      */
-    FetishBlowdart
+    fetishBlowdart
 }

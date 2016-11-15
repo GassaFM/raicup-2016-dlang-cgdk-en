@@ -12,9 +12,14 @@ module model.action_type;
 enum ActionType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * Do nothing.
      */
-    None,
+    none,
 
     /**
      * Perform a melee attack with a staff.
@@ -23,7 +28,7 @@ enum ActionType : byte
      * `game.staffSector / 2.0`. The distance between wizard and target centers should not exceed
      * `game.staffRange + livingUnit.radius`.
      */
-    Staff,
+    staff,
 
     /**
      * Cast a magic missile.
@@ -36,7 +41,7 @@ enum ActionType : byte
      * $(BR)
      * Requires `game.magicMissileManacost` manapoints.
      */
-    MagicMissile,
+    magicMissile,
 
     /**
      * Cast a frost bolt.
@@ -47,9 +52,9 @@ enum ActionType : byte
      * projectile is equal to `wizard.angle + move.castAngle`, and its speed is `game.frostBoltSpeed`.
      * All collisions between a projectile and its caster are ignored by the game engine.
      * $(BR)
-     * Requires the `FrostBolt` skill and `game.frostBoltManacost` manapoints.
+     * Requires the `frostBolt` skill and `game.frostBoltManacost` manapoints.
      */
-    FrostBolt,
+    frostBolt,
 
     /**
      * Cast a fireball.
@@ -61,23 +66,23 @@ enum ActionType : byte
      * projectile is equal to `wizard.angle + move.castAngle`, and its speed is `game.fireballSpeed`.
      * All collisions between a projectile and its caster are ignored by the game engine.
      * $(BR)
-     * Requires the `Fireball` skill and `game.fireballManacost` manapoints.
+     * Requires the `fireball` skill and `game.fireballManacost` manapoints.
      */
-    Fireball,
+    fireball,
 
     /**
-     * Cast a haste spell, that temporarily speedups the friendly wizard with Id equal to `move.statusTargetId`
+     * Cast a haste spell, that temporarily speedups the friendly wizard with id equal to `move.statusTargetId`
      * or the caster himself if the game engine can not find such wizard.
      * $(BR)
-     * Requires the `Haste` skill and `game.hasteManacost` manapoints.
+     * Requires the `haste` skill and `game.hasteManacost` manapoints.
      */
-    Haste,
+    haste,
 
     /**
-     * Cast a shield spell, that temporarily protects the friendly wizard with Id equal to `move.statusTargetId`
+     * Cast a shield spell, that temporarily protects the friendly wizard with id equal to `move.statusTargetId`
      * or the caster himself if the game engine can not find such wizard.
      * $(BR)
-     * Requires the `Shield` skill and `game.shieldManacost` manapoints.
+     * Requires the `shield` skill and `game.shieldManacost` manapoints.
      */
-    Shield
+    shield
 }

@@ -9,12 +9,17 @@ import model.building;
 enum BuildingType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * Guardian tower.
      */
-    GuardianTower,
+    guardianTower,
 
     /**
      * Faction base.
      */
-    FactionBase
+    factionBase
 }

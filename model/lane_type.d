@@ -6,17 +6,22 @@ module model.lane_type;
 enum LaneType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * Top lane. It goes through the lower left, the upper left and the upper right corners of the map.
      */
-    Top,
+    top,
 
     /**
      * Middle lane. Directly connects the lower left and the upper right corners of the map.
      */
-    Middle,
+    middle,
 
     /**
      * Bottom lane. It goes through the lower left, the lower right and the upper right corners of the map.
      */
-    Bottom
+    bottom
 }

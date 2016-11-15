@@ -8,22 +8,27 @@ import model.unit;
 enum Faction : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * Wizards, minions and buildings of Academy.
      */
-    Academy,
+    academy,
 
     /**
      * Wizards, minions and buildings of Renegades.
      */
-    Renegades,
+    renegades,
 
     /**
      * Neutral units. Do not attack first, but will strike back when damaged.
      */
-    Neutral,
+    neutral,
 
     /**
      * All other units in the game world.
      */
-    Other
+    other
 }

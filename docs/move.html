@@ -15,7 +15,7 @@
  <br>
  By default the <u>speed</u> is in range of <pre style="display:inline;" class="d_inline_code">-game.wizardBackwardSpeed</pre> to <pre style="display:inline;" class="d_inline_code">game.wizardForwardSpeed</pre>.
  These limits can be extended depending on skills of moving wizard and auras of nearby friendly wizards.
- The <pre style="display:inline;" class="d_inline_code">Hastened</pre> status can also greatly <u>speed</u> up a wizard.
+ The <pre style="display:inline;" class="d_inline_code">hastened</pre> status can also greatly <u>speed</u> up a wizard.
  <br>
  If a specified value is out of the range, than it become equal to the nearest value of the range.
  The positive values mean moving forward.
@@ -30,7 +30,7 @@
  <br>
  By default the strafe speed is in range of <pre style="display:inline;" class="d_inline_code">-game.wizardStrafeSpeed</pre> to <pre style="display:inline;" class="d_inline_code">game.wizardStrafeSpeed</pre>.
  These limits can be extended depending on skills of moving wizard and auras of nearby friendly wizards.
- The <pre style="display:inline;" class="d_inline_code">Hastened</pre> status can also greatly speed up a wizard.
+ The <pre style="display:inline;" class="d_inline_code">hastened</pre> status can also greatly speed up a wizard.
  <br>
  If a specified value is out of the range, than it become equal to the nearest value of the range.
  The positive values mean moving to the right.
@@ -42,10 +42,10 @@
 <dt><big><a name="Move.turn"></a>double <u>turn</u>;
 </big></dt>
 <dd>Sets the <u>turn</u> angle for one tick.
- <p/>
+ <br>
  The <u>turn</u> angle is in radians and is relative to the current angle of the wizard.
  By default the <u>turn</u> angle is in range of <pre style="display:inline;" class="d_inline_code">-game.wizardMaxTurnAngle</pre> to <pre style="display:inline;" class="d_inline_code">game.wizardMaxTurnAngle</pre>.
- The <pre style="display:inline;" class="d_inline_code">Hastened</pre> status increases bot limits by <pre style="display:inline;" class="d_inline_code">1.0 + game.hastenedRotationBonusFactor</pre> times.
+ The <pre style="display:inline;" class="d_inline_code">hastened</pre> status increases bot limits by <pre style="display:inline;" class="d_inline_code">1.0 + game.hastenedRotationBonusFactor</pre> times.
  <br>
  If a specified value is out of the range, than it become equal to the nearest value of the range.
  The positive values mean turning clockwise.<br><br>
@@ -90,7 +90,7 @@
 <dd>Sets the maximal cast distance for one tick.
  <br>
  If the distance from the center of the projectile to the point of its occurrence is greater than the value of
- this parameter, the projectile will be removed from the game world. In this case, the <pre style="display:inline;" class="d_inline_code">Fireball</pre> projectile
+ this parameter, the projectile will be removed from the game world. In this case, the <pre style="display:inline;" class="d_inline_code">fireball</pre> projectile
  detonates.
  <br>
  The default value of this parameter is higher than the maximal flying range of any projectile in the game.
@@ -100,14 +100,14 @@
 </dd>
 <dt><big><a name="Move.statusTargetId"></a>long <u>statusTargetId</u>;
 </big></dt>
-<dd>Sets the Id of the target living unit to cast a status spell.
+<dd>Sets the id of the target living unit to cast a status spell.
  <br>
  According to the game rules, the valid targets are only the wizards of the same faction. If the wizard with the
- specified Id is not found, the status is applied directly to the wizard performing the action. The relative angle
+ specified id is not found, the status is applied directly to the wizard performing the action. The relative angle
  to the target should be in range of <pre style="display:inline;" class="d_inline_code">-game.staffSector / 2.0</pre> to <pre style="display:inline;" class="d_inline_code">game.staffSector / 2.0</pre>. The
  distance to the target is limited by <pre style="display:inline;" class="d_inline_code">wizard.castRange</pre>.
  <br>
- The default value of this parameter is <pre style="display:inline;" class="d_inline_code">-1</pre> (wrong Id).
+ The default value of this parameter is <pre style="display:inline;" class="d_inline_code">-1</pre> (wrong id).
  <br>
  If the specified action is not a status spell, than the game engine will simply ignore this parameter.<br><br>
 
@@ -122,14 +122,14 @@
  In some game modes a wizard can not learn skills.<br><br>
 
 </dd>
-<dt><big><a name="Move.messages"></a>Message[] <u>messages</u>;
+<dt><big><a name="Move.messages"></a>immutable(Message)[] <u>messages</u>;
 </big></dt>
 <dd>Sets the <u>messages</u> for the wizards of the same faction.
  <br>
  Available only to the master wizard. If not empty, the number of <u>messages</u> must be strictly equal to the number of
  wizards of the friendly faction (dead or alive) except the master wizard.
  <br>
- Messages are addressed in ascending order of wizard Ids. Some <u>messages</u> can be empty (<pre style="display:inline;" class="d_inline_code">null</pre>), if supported
+ Messages are addressed in ascending order of wizard ids. Some <u>messages</u> can be empty (<pre style="display:inline;" class="d_inline_code">null</pre>), if supported
  by the programming language used by strategy. In other case all items should be the correct <u>messages</u>.
  <br>
  The game engine may ignore the message to a specific wizard, if there is another pending message to the same

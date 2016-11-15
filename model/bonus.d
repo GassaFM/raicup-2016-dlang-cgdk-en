@@ -7,23 +7,23 @@ import model.faction;
 /**
  * This class describes a bonus. Bonus is a static useful circular unit.
  */
-class Bonus : CircularUnit
+immutable class Bonus : CircularUnit
 {
     /**
      * Returns: the bonus type.
      */
-    immutable BonusType type;
+    BonusType type;
 
-    immutable this (
+    this (
         long id,
         double x,
         double y,
         double speedX,
         double speedY,
         double angle,
-        immutable (Faction) faction,
+        immutable Faction faction,
         double radius,
-        immutable (BonusType) type)
+        immutable BonusType type)
     {
         super (id, x, y, speedX, speedY, angle, faction, radius);
 

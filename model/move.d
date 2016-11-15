@@ -3,7 +3,6 @@ module model.move;
 import model.message;
 import model.action_type;
 import model.skill_type;
-import std.math;
 
 /**
  * An encapsulated result of each move of your strategy.
@@ -15,7 +14,7 @@ class Move
      * $(BR)
      * By default the speed is in range of `-game.wizardBackwardSpeed` to `game.wizardForwardSpeed`.
      * These limits can be extended depending on skills of moving wizard and auras of nearby friendly wizards.
-     * The `Hastened` status can also greatly speed up a wizard.
+     * The `hastened` status can also greatly speed up a wizard.
      * $(BR)
      * If a specified value is out of the range, than it become equal to the nearest value of the range.
      * The positive values mean moving forward.
@@ -29,7 +28,7 @@ class Move
      * $(BR)
      * By default the strafe speed is in range of `-game.wizardStrafeSpeed` to `game.wizardStrafeSpeed`.
      * These limits can be extended depending on skills of moving wizard and auras of nearby friendly wizards.
-     * The `Hastened` status can also greatly speed up a wizard.
+     * The `hastened` status can also greatly speed up a wizard.
      * $(BR)
      * If a specified value is out of the range, than it become equal to the nearest value of the range.
      * The positive values mean moving to the right.
@@ -40,10 +39,10 @@ class Move
     double strafeSpeed = 0.0;
     /**
      * Sets the turn angle for one tick.
-     * <p/>
+     * $(BR)
      * The turn angle is in radians and is relative to the current angle of the wizard.
      * By default the turn angle is in range of `-game.wizardMaxTurnAngle` to `game.wizardMaxTurnAngle`.
-     * The `Hastened` status increases bot limits by `1.0 + game.hastenedRotationBonusFactor` times.
+     * The `hastened` status increases bot limits by `1.0 + game.hastenedRotationBonusFactor` times.
      * $(BR)
      * If a specified value is out of the range, than it become equal to the nearest value of the range.
      * The positive values mean turning clockwise.
@@ -55,7 +54,7 @@ class Move
      * The specified action can be ignored by the game engine, if the controlling wizard has insufficient manapoints or
      * this action is on cooldown.
      */
-    ActionType action;
+    ActionType action = ActionType.unknown;
     /**
      * Sets the cast angle for one tick.
      * $(BR)
@@ -84,7 +83,7 @@ class Move
      * Sets the maximal cast distance for one tick.
      * $(BR)
      * If the distance from the center of the projectile to the point of its occurrence is greater than the value of
-     * this parameter, the projectile will be removed from the game world. In this case, the `Fireball` projectile
+     * this parameter, the projectile will be removed from the game world. In this case, the `fireball` projectile
      * detonates.
      * $(BR)
      * The default value of this parameter is higher than the maximal flying range of any projectile in the game.
@@ -93,14 +92,14 @@ class Move
      */
     double maxCastDistance = 10000.0;
     /**
-     * Sets the Id of the target living unit to cast a status spell.
+     * Sets the id of the target living unit to cast a status spell.
      * $(BR)
      * According to the game rules, the valid targets are only the wizards of the same faction. If the wizard with the
-     * specified Id is not found, the status is applied directly to the wizard performing the action. The relative angle
+     * specified id is not found, the status is applied directly to the wizard performing the action. The relative angle
      * to the target should be in range of `-game.staffSector / 2.0` to `game.staffSector / 2.0`. The
      * distance to the target is limited by `wizard.castRange`.
      * $(BR)
-     * The default value of this parameter is `-1` (wrong Id).
+     * The default value of this parameter is `-1` (wrong id).
      * $(BR)
      * If the specified action is not a status spell, than the game engine will simply ignore this parameter.
      */
@@ -113,14 +112,14 @@ class Move
      * $(BR)
      * In some game modes a wizard can not learn skills.
      */
-    SkillType skillToLearn;
+    SkillType skillToLearn = SkillType.unknown;
     /**
      * Sets the messages for the wizards of the same faction.
      * $(BR)
      * Available only to the master wizard. If not empty, the number of messages must be strictly equal to the number of
      * wizards of the friendly faction (dead or alive) except the master wizard.
      * $(BR)
-     * Messages are addressed in ascending order of wizard Ids. Some messages can be empty (`null`), if supported
+     * Messages are addressed in ascending order of wizard ids. Some messages can be empty (`null`), if supported
      * by the programming language used by strategy. In other case all items should be the correct messages.
      * $(BR)
      * The game engine may ignore the message to a specific wizard, if there is another pending message to the same
@@ -129,5 +128,5 @@ class Move
      * $(BR)
      * Not all game modes support the messages.
      */
-    Message [] messages;
+    immutable (Message) [] messages;
 }

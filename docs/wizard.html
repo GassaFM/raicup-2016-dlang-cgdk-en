@@ -12,7 +12,7 @@
 <dl><dt><big><a name="Wizard.ownerPlayerId"></a>immutable long <u>ownerPlayerId</u>;
 </big></dt>
 <dd><b>Returns:</b><br>
-the Id of the owner player.<br><br>
+the id of the owner player.<br><br>
 
 </dd>
 <dt><big><a name="Wizard.me"></a>immutable bool <u>me</u>;
@@ -82,8 +82,8 @@ the amount of ticks remaining before any new action.
 the non-negative integer numbers. Each item is equal to the amount of ticks remaining before the next
  action with the corresponding index.
  <br>
- For example, <pre style="display:inline;" class="d_inline_code"><u>remainingCooldownTicksByAction</u>[0]</pre> corresponds to <pre style="display:inline;" class="d_inline_code">None</pre> action and always equal to
- zero. <pre style="display:inline;" class="d_inline_code"><u>remainingCooldownTicksByAction</u>[1]</pre> corresponds to <pre style="display:inline;" class="d_inline_code">Staff</pre> action and equal to the amount of
+ For example, <pre style="display:inline;" class="d_inline_code"><u>remainingCooldownTicksByAction</u>[0]</pre> corresponds to <pre style="display:inline;" class="d_inline_code">none</pre> action and always equal to
+ zero. <pre style="display:inline;" class="d_inline_code"><u>remainingCooldownTicksByAction</u>[1]</pre> corresponds to <pre style="display:inline;" class="d_inline_code">staff</pre> action and equal to the amount of
  ticks remaining before the next staff attack.
  <br>
  A wizard can perform the action <pre style="display:inline;" class="d_inline_code">actionType</pre> if and only if both <pre style="display:inline;" class="d_inline_code">remainingActionCooldownTicks</pre> and

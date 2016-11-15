@@ -7,21 +7,21 @@ import model.status;
 /**
  * This class is inherited from a living unit and describes a tree.
  */
-class Tree : LivingUnit
+immutable class Tree : LivingUnit
 {
 
-    immutable this (
+    this (
         long id,
         double x,
         double y,
         double speedX,
         double speedY,
         double angle,
-        immutable (Faction) faction,
+        immutable Faction faction,
         double radius,
         int life,
         int maxLife,
-        immutable (Status) [] statuses)
+        immutable Status [] statuses)
     {
         super (id, x, y, speedX, speedY, angle, faction, radius, life, maxLife, statuses);
     }

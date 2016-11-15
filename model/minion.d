@@ -8,42 +8,42 @@ import model.faction;
 /**
  * This class is inherited from a living unit and describes a minion.
  */
-class Minion : LivingUnit
+immutable class Minion : LivingUnit
 {
     /**
      * Returns: the minion type.
      */
-    immutable MinionType type;
+    MinionType type;
     /**
      * Returns: the maximal range (between units' centers), at which this minion can detect other units.
      */
-    immutable double visionRange;
+    double visionRange;
     /**
      * Returns: the damage of one attack.
      */
-    immutable int damage;
+    int damage;
     /**
      * Returns: the delay between attacks.
      */
-    immutable int cooldownTicks;
+    int cooldownTicks;
     /**
      * Returns: the amount of ticks remaining before the next attack.
      */
-    immutable int remainingActionCooldownTicks;
+    int remainingActionCooldownTicks;
 
-    immutable this (
+    this (
         long id,
         double x,
         double y,
         double speedX,
         double speedY,
         double angle,
-        immutable (Faction) faction,
+        immutable Faction faction,
         double radius,
         int life,
         int maxLife,
-        immutable (Status) [] statuses,
-        immutable (MinionType) type,
+        immutable Status [] statuses,
+        immutable MinionType type,
         double visionRange,
         int damage,
         int cooldownTicks,

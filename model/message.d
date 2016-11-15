@@ -13,12 +13,12 @@ import model.lane_type;
  * The wizard is free to ignore as any part of the message and the entire message, however this can lead to the defeat
  * of wizard's faction.
  */
-class Message
+immutable class Message
 {
     /**
      * Returns: the order to control the specified lane.
      */
-    immutable LaneType lane;
+    LaneType lane;
     /**
      * Returns: the order to learn the specified skill.
      *
@@ -28,7 +28,7 @@ class Message
      * $(BR)
      * The field value may not be available in all game modes.
      */
-    immutable SkillType skillToLearn;
+    SkillType skillToLearn;
     /**
      * Returns: the text message in a forgotten ancient language.
      * $(BR)
@@ -39,15 +39,15 @@ class Message
      * $(BR)
      * The field value may not be available in all game modes.
      */
-    immutable byte [] rawMessage;
+    byte [] rawMessage;
 
-    immutable this (
-        immutable (LaneType) lane,
-        immutable (SkillType) skillToLearn,
-        byte [] rawMessage)
+    this (
+        immutable LaneType lane,
+        immutable SkillType skillToLearn,
+        immutable byte [] rawMessage)
     {
         this.lane = lane;
         this.skillToLearn = skillToLearn;
-        this.rawMessage = rawMessage.idup;
+        this.rawMessage = rawMessage;
     }
 }

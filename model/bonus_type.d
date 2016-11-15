@@ -11,21 +11,26 @@ import model.bonus;
 enum BonusType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * Dramatically increases the damage of ranged and melee attacks for some time.
      */
-    Empower,
+    empower,
 
     /**
-     * Grants the `Hastened` status to the wizard.
+     * Grants the `hastened` status to the wizard.
      * $(BR)
      * Duration of the status is longer than usually.
      */
-    Haste,
+    haste,
 
     /**
-     * Grants the `Shielded` status to the wizard.
+     * Grants the `shielded` status to the wizard.
      * $(BR)
      * Duration of the status is longer than usually.
      */
-    Shield
+    shield
 }

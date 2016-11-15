@@ -7,31 +7,31 @@ import model.faction;
 /**
  * This class is inherited from a circular unit and describes a projectile.
  */
-class Projectile : CircularUnit
+immutable class Projectile : CircularUnit
 {
     /**
      * Returns: the type of the projectile.
      */
-    immutable ProjectileType type;
+    ProjectileType type;
     /**
-     * Returns: the Id of the unit created this projectile.
+     * Returns: the id of the unit created this projectile.
      */
-    immutable long ownerUnitId;
+    long ownerUnitId;
     /**
-     * Returns: the Id of the player, which unit created this projectile, or `-1`.
+     * Returns: the id of the player, which unit created this projectile, or `-1`.
      */
-    immutable long ownerPlayerId;
+    long ownerPlayerId;
 
-    immutable this (
+    this (
         long id,
         double x,
         double y,
         double speedX,
         double speedY,
         double angle,
-        immutable (Faction) faction,
+        immutable Faction faction,
         double radius,
-        immutable (ProjectileType) type,
+        immutable ProjectileType type,
         long ownerUnitId,
         long ownerPlayerId)
     {

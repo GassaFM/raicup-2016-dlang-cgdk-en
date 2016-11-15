@@ -3,28 +3,28 @@ module model.game;
 /**
  * An instance of this class contains all game constants.
  */
-class Game
+immutable class Game
 {
     /**
      * Returns: the number that your strategy may use to initialize a generator of random numbers.
      */
-    immutable long randomSeed;
+    long randomSeed;
     /**
      * Returns: the base game duration in ticks. A real game duration may be lower. Equals to `world.tickCount`.
      */
-    immutable int tickCount;
+    int tickCount;
     /**
      * Returns: the size (both width and height) of the map.
      */
-    immutable double mapSize;
+    double mapSize;
     /**
      * Returns: `true` if and only if the wizards in this game can gain new levels and learn skills.
      */
-    immutable bool skillsEnabled;
+    bool skillsEnabled;
     /**
      * Returns: `true` if and only if the master wizards in this game can send raw messages.
      */
-    immutable bool rawMessagesEnabled;
+    bool rawMessagesEnabled;
     /**
      * Returns: Returns the damage part dealt by the wizards one faction to each other as a result of friendly fire.
      * $(BR)
@@ -32,50 +32,50 @@ class Game
      * $(BR)
      * Regardless of the game mode, wizards can not damage friendly minions and buildings.
      */
-    immutable double friendlyFireDamageFactor;
+    double friendlyFireDamageFactor;
     /**
      * Returns: the factor of the experience points gained by the wizard for the damage dealt to the opposite faction
      * buildings.
      */
-    immutable double buildingDamageScoreFactor;
+    double buildingDamageScoreFactor;
     /**
      * Returns: the factor of the experience points gained by the wizard for destroying the opposite faction building.
      * $(BR)
      * Applies to the maximal amount of building's hitpoints.
      */
-    immutable double buildingEliminationScoreFactor;
+    double buildingEliminationScoreFactor;
     /**
      * Returns: the factor of the experience points gained by the wizard for the damage dealt to the other faction
      * minions.
      */
-    immutable double minionDamageScoreFactor;
+    double minionDamageScoreFactor;
     /**
      * Returns: the factor of the experience points gained by the wizard for killing the other faction minion.
      * $(BR)
      * Applies to the maximal amount of minion's hitpoints.
      */
-    immutable double minionEliminationScoreFactor;
+    double minionEliminationScoreFactor;
     /**
      * Returns: the factor of the experience points gained by the wizard for the damage dealt to the opposite faction
      * wizards.
      */
-    immutable double wizardDamageScoreFactor;
+    double wizardDamageScoreFactor;
     /**
      * Returns: the factor of the experience points gained by the wizard for killing the opposite faction wizard.
      * $(BR)
      * Applies to the maximal amount of wizard's hitpoints.
      */
-    immutable double wizardEliminationScoreFactor;
+    double wizardEliminationScoreFactor;
     /**
      * Returns: the experience multiplier applied in case, if the enemy unit died near two or more friendly wizards.
      * $(BR)
      * After applying this multiplier, the amount of the experience is rounded down.
      */
-    immutable double teamWorkingScoreFactor;
+    double teamWorkingScoreFactor;
     /**
      * Returns: the amount of experience points received by each player of the faction in case of victory.
      */
-    immutable int victoryScore;
+    int victoryScore;
     /**
      * Returns: the maximal range, at which a wizard gains experience points in case, if a friendly unit kills an other
      * faction unit.
@@ -88,13 +88,13 @@ class Game
      * $(BR)
      * The range is considered as the range between units' centers.
      */
-    immutable double scoreGainRange;
+    double scoreGainRange;
     /**
      * Returns: the maximal possible length of a raw message.
      * $(BR)
      * If a message has higher length, then it will be completely ignored.
      */
-    immutable int rawMessageMaxLength;
+    int rawMessageMaxLength;
     /**
      * Returns: the raw message transmission speed.
      * $(BR)
@@ -102,157 +102,157 @@ class Game
      * receipt of the message will be delayed for `ceil (message.rawMessage.length / rawMessageTransmissionSpeed)`
      * game ticks.
      */
-    immutable double rawMessageTransmissionSpeed;
+    double rawMessageTransmissionSpeed;
     /**
      * Returns: the radius of a wizard.
      */
-    immutable double wizardRadius;
+    double wizardRadius;
     /**
      * Returns: the base cast range of a wizard.
      * $(BR)
      * The effective cast range (`wizard.castRange`) may be higher depending on skills of the wizard and auras of
      * nearby friendly wizards.
      */
-    immutable double wizardCastRange;
+    double wizardCastRange;
     /**
      * Returns: the maximal range (between units' centers), at which a wizard can detect other units.
      */
-    immutable double wizardVisionRange;
+    double wizardVisionRange;
     /**
      * Returns: the base limit of wizard's forward speed.
      * $(BR)
      * The effective forward speed may be higher depending on skills of the wizard and auras of nearby friendly
-     * wizards. The `Hastened` status can also greatly speed up a wizard.
+     * wizards. The `hastened` status can also greatly speed up a wizard.
      */
-    immutable double wizardForwardSpeed;
+    double wizardForwardSpeed;
     /**
      * Returns: the base limit of wizard's backward speed.
      * $(BR)
      * The effective backward speed may be higher depending on skills of the wizard and auras of nearby friendly
-     * wizards. The `Hastened` status can also greatly speed up a wizard.
+     * wizards. The `hastened` status can also greatly speed up a wizard.
      */
-    immutable double wizardBackwardSpeed;
+    double wizardBackwardSpeed;
     /**
      * Returns: the base limit of wizard's strafe speed.
      * $(BR)
      * The effective strafe speed may be higher depending on skills of the wizard and auras of nearby friendly
-     * wizards. The `Hastened` status can also greatly speed up a wizard.
+     * wizards. The `hastened` status can also greatly speed up a wizard.
      */
-    immutable double wizardStrafeSpeed;
+    double wizardStrafeSpeed;
     /**
      * Returns: the maximal amount of wizard's hitpoints at initial level.
      */
-    immutable int wizardBaseLife;
+    int wizardBaseLife;
     /**
      * Returns: the growth of wizard's hitpoints per level.
      */
-    immutable int wizardLifeGrowthPerLevel;
+    int wizardLifeGrowthPerLevel;
     /**
      * Returns: the maximal amount of wizard's manapoints at initial level.
      */
-    immutable int wizardBaseMana;
+    int wizardBaseMana;
     /**
      * Returns: the growth of wizard's manapoints per level.
      */
-    immutable int wizardManaGrowthPerLevel;
+    int wizardManaGrowthPerLevel;
     /**
      * Returns: the regeneration speed of wizard's hitpoints at initial level.
      */
-    immutable double wizardBaseLifeRegeneration;
+    double wizardBaseLifeRegeneration;
     /**
      * Returns: the growth of the regeneration speed of wizard's hitpoints.
      */
-    immutable double wizardLifeRegenerationGrowthPerLevel;
+    double wizardLifeRegenerationGrowthPerLevel;
     /**
      * Returns: the regeneration speed of wizard's manapoints at initial level.
      */
-    immutable double wizardBaseManaRegeneration;
+    double wizardBaseManaRegeneration;
     /**
      * Returns: the growth of the regeneration speed of wizard's manapoints.
      */
-    immutable double wizardManaRegenerationGrowthPerLevel;
+    double wizardManaRegenerationGrowthPerLevel;
     /**
      * Returns: the base limit of wizard's turn speed.
      * $(BR)
-     * The `Hastened` status increases this limit by `1.0 + hastenedRotationBonusFactor` times.
+     * The `hastened` status increases this limit by `1.0 + hastenedRotationBonusFactor` times.
      */
-    immutable double wizardMaxTurnAngle;
+    double wizardMaxTurnAngle;
     /**
      * Returns: the maximal possible delay of a wizard's revival.
      */
-    immutable int wizardMaxResurrectionDelayTicks;
+    int wizardMaxResurrectionDelayTicks;
     /**
      * Returns: the minimal possible delay of a wizard's revival.
      */
-    immutable int wizardMinResurrectionDelayTicks;
+    int wizardMinResurrectionDelayTicks;
     /**
      * Returns: the minimal possible interval between any two actions of a wizard.
      */
-    immutable int wizardActionCooldownTicks;
+    int wizardActionCooldownTicks;
     /**
      * Returns: the minimal possible interval between any two staff attacks.
      */
-    immutable int staffCooldownTicks;
+    int staffCooldownTicks;
     /**
      * Returns: the minimal possible interval between any two ``Magic missile'' spell casts.
      */
-    immutable int magicMissileCooldownTicks;
+    int magicMissileCooldownTicks;
     /**
      * Returns: the minimal possible interval between any two ``Frost bolt'' spell casts.
      */
-    immutable int frostBoltCooldownTicks;
+    int frostBoltCooldownTicks;
     /**
      * Returns: the minimal possible interval between any two ``Fireball'' spell casts.
      */
-    immutable int fireballCooldownTicks;
+    int fireballCooldownTicks;
     /**
      * Returns: the minimal possible interval between any two ``Haste'' spell casts.
      */
-    immutable int hasteCooldownTicks;
+    int hasteCooldownTicks;
     /**
      * Returns: the minimal possible interval between any two ``Shield'' spell casts.
      */
-    immutable int shieldCooldownTicks;
+    int shieldCooldownTicks;
     /**
      * Returns: the ``Magic missile'' spell manacost.
      */
-    immutable int magicMissileManacost;
+    int magicMissileManacost;
     /**
      * Returns: the ``Frost bolt'' spell manacost.
      */
-    immutable int frostBoltManacost;
+    int frostBoltManacost;
     /**
      * Returns: the ``Fireball'' spell manacost.
      */
-    immutable int fireballManacost;
+    int fireballManacost;
     /**
      * Returns: the ``Haste'' spell manacost.
      */
-    immutable int hasteManacost;
+    int hasteManacost;
     /**
      * Returns: the ``Shield'' spell manacost.
      */
-    immutable int shieldManacost;
+    int shieldManacost;
     /**
      * Returns: the base staff damage.
      * $(BR)
      * The effective damage may be higher depending on skills of the wizard and auras of nearby friendly wizards.
      */
-    immutable int staffDamage;
+    int staffDamage;
     /**
      * Returns: the wizard's staff sector.
      * $(BR)
      * A staff attack damages all living units in a sector of `-staffSector / 2.0` to `staffSector / 2.0`.
      * This also applies to the status spells and to the relative projectile angle.
      */
-    immutable double staffSector;
+    double staffSector;
     /**
      * Returns: the wizard's staff range.
      * $(BR)
      * A staff attack damages all living units if the distance between wizard's and target's centers is not greater than
      * `staffRange + livingUnit.radius`.
      */
-    immutable double staffRange;
+    double staffRange;
     /**
      * Returns: the non-negative integers.
      * $(BR)
@@ -260,79 +260,79 @@ class Game
      * experience points a wizard of level `N` should get to reach the next level. Thus, the amount of experience
      * required for the zero level wizard to get to the level `N`, is the sum of the first `N` elements.
      */
-    immutable int [] levelUpXpValues;
+    int [] levelUpXpValues;
     /**
      * Returns: the radius of a minion.
      */
-    immutable double minionRadius;
+    double minionRadius;
     /**
      * Returns: the maximal range (between units' centers), at which a minion can detect other units.
      */
-    immutable double minionVisionRange;
+    double minionVisionRange;
     /**
      * Returns: the forward speed of a minion.
      * $(BR)
      * A minion can not strafe or move backward.
      */
-    immutable double minionSpeed;
+    double minionSpeed;
     /**
      * Returns: the maximal turn speed of a minion.
      */
-    immutable double minionMaxTurnAngle;
+    double minionMaxTurnAngle;
     /**
      * Returns: the maximal amount of minion's hitpoints.
      */
-    immutable int minionLife;
+    int minionLife;
     /**
-     * Returns: the interval at which appear the minions of the two opposing factions (`Academy` and
-     * `Renegades`).
+     * Returns: the interval at which appear the minions of the two opposing factions (`academy` and
+     * `renegades`).
      * $(BR)
      * The minions of each of these factions appear in three groups near their base (one group per lane). Each group
      * consists of three orcs and one fetish. The minions immediately begin to advance on their lane toward the opposite
      * faction base, attacking all enemies in their path.
      */
-    immutable int factionMinionAppearanceIntervalTicks;
+    int factionMinionAppearanceIntervalTicks;
     /**
      * Returns: the minimal possible interval between any two attacks of an orc.
      */
-    immutable int orcWoodcutterActionCooldownTicks;
+    int orcWoodcutterActionCooldownTicks;
     /**
      * Returns: the damage of one attack of an orc.
      */
-    immutable int orcWoodcutterDamage;
+    int orcWoodcutterDamage;
     /**
      * Returns: the orc's axe sector.
      * $(BR)
      * An axe attack damages all living units in a sector of `-orcWoodcutterAttackSector / 2.0` to
      * `orcWoodcutterAttackSector / 2.0`.
      */
-    immutable double orcWoodcutterAttackSector;
+    double orcWoodcutterAttackSector;
     /**
      * Returns: the orc's axe range.
      * $(BR)
      * An axe attack damages all living units if the distance between orc's and target's centers is not greater than
      * `orcWoodcutterAttackRange + livingUnit.radius`.
      */
-    immutable double orcWoodcutterAttackRange;
+    double orcWoodcutterAttackRange;
     /**
      * Returns: the minimal possible interval between any two attacks of a fetish.
      */
-    immutable int fetishBlowdartActionCooldownTicks;
+    int fetishBlowdartActionCooldownTicks;
     /**
      * Returns: the maximal dart fly range.
      */
-    immutable double fetishBlowdartAttackRange;
+    double fetishBlowdartAttackRange;
     /**
      * Returns: the dart throw sector.
      * $(BR)
      * The relative angle of a dart is in range of `-fetishBlowdartAttackSector / 2.0` to
      * `fetishBlowdartAttackSector / 2.0`.
      */
-    immutable double fetishBlowdartAttackSector;
+    double fetishBlowdartAttackSector;
     /**
      * Returns: the radius of a bonus.
      */
-    immutable double bonusRadius;
+    double bonusRadius;
     /**
      * Returns: the interval at which appears a bonus.
      * $(BR)
@@ -341,67 +341,67 @@ class Game
      * the new bonus area is already occupied by a wizard or by an existing bonus, then the creation of the bonus will
      * be postponed till the end of the next interval.
      */
-    immutable int bonusAppearanceIntervalTicks;
+    int bonusAppearanceIntervalTicks;
     /**
      * Returns: the amount of score and experience points for taking a bonus.
      */
-    immutable int bonusScoreAmount;
+    int bonusScoreAmount;
     /**
      * Returns: the radius of a dart.
      */
-    immutable double dartRadius;
+    double dartRadius;
     /**
      * Returns: the dart speed.
      */
-    immutable double dartSpeed;
+    double dartSpeed;
     /**
      * Returns: the dart damage.
      */
-    immutable int dartDirectDamage;
+    int dartDirectDamage;
     /**
      * Returns: the radius of a magic missile projectile.
      */
-    immutable double magicMissileRadius;
+    double magicMissileRadius;
     /**
      * Returns: the magic missile projectile speed.
      */
-    immutable double magicMissileSpeed;
+    double magicMissileSpeed;
     /**
      * Returns: the magic missile projectile damage.
      */
-    immutable int magicMissileDirectDamage;
+    int magicMissileDirectDamage;
     /**
      * Returns: the radius of a frost bolt projectile.
      */
-    immutable double frostBoltRadius;
+    double frostBoltRadius;
     /**
      * Returns: the frost bolt projectile speed.
      */
-    immutable double frostBoltSpeed;
+    double frostBoltSpeed;
     /**
      * Returns: the frost bolt projectile damage.
      */
-    immutable int frostBoltDirectDamage;
+    int frostBoltDirectDamage;
     /**
      * Returns: the radius of a fireball projectile.
      */
-    immutable double fireballRadius;
+    double fireballRadius;
     /**
      * Returns: the fireball projectile speed.
      */
-    immutable double fireballSpeed;
+    double fireballSpeed;
     /**
      * Returns: the radius of the area in which living units are taking maximal damage from the fireball projectile
      * explosion.
      * See_Also: #getFireballExplosionMaxDamage ()
      */
-    immutable double fireballExplosionMaxDamageRange;
+    double fireballExplosionMaxDamageRange;
     /**
      * Returns: the radius of the area in which living units are taking any damage from the fireball projectile
      * explosion.
      * See_Also: #getFireballExplosionMaxDamage ()
      */
-    immutable double fireballExplosionMinDamageRange;
+    double fireballExplosionMinDamageRange;
     /**
      * Returns: the damage of the fireball at the epicenter of the explosion.
      * $(BR)
@@ -411,147 +411,147 @@ class Game
      * and reaches `fireballExplosionMinDamage`. If the distance from the center of the explosion to the nearest
      * point of the living unit exceeds `fireballExplosionMinDamageRange`, this unit takes no damage.
      * $(BR)
-     * If a living unit takes any damage from the fireball explosion, it receives a `Burning` status.
+     * If a living unit takes any damage from the fireball explosion, it receives a `burning` status.
      */
-    immutable int fireballExplosionMaxDamage;
+    int fireballExplosionMaxDamage;
     /**
      * Returns: the damage of the fireball on the periphery of the explosion.
      * See_Also: #getFireballExplosionMaxDamage ()
      */
-    immutable int fireballExplosionMinDamage;
+    int fireballExplosionMinDamage;
     /**
      * Returns: the radius of a guardian tower.
      */
-    immutable double guardianTowerRadius;
+    double guardianTowerRadius;
     /**
      * Returns: the maximal range (between units' centers), at which a guardian tower can detect other units.
      */
-    immutable double guardianTowerVisionRange;
+    double guardianTowerVisionRange;
     /**
      * Returns: the maximal amount of guardian tower's hitpoints.
      */
-    immutable double guardianTowerLife;
+    double guardianTowerLife;
     /**
      * Returns: the maximal range (between units' centers), at which a guardian tower can attack other units.
      */
-    immutable double guardianTowerAttackRange;
+    double guardianTowerAttackRange;
     /**
      * Returns: the damage of one attack of a guardian tower.
      */
-    immutable int guardianTowerDamage;
+    int guardianTowerDamage;
     /**
      * Returns: the minimal possible interval between any two attacks of a guardian tower.
      */
-    immutable int guardianTowerCooldownTicks;
+    int guardianTowerCooldownTicks;
     /**
      * Returns: the radius of a faction base.
      */
-    immutable double factionBaseRadius;
+    double factionBaseRadius;
     /**
      * Returns: the maximal range (between units' centers), at which a faction base can detect other units.
      */
-    immutable double factionBaseVisionRange;
+    double factionBaseVisionRange;
     /**
      * Returns: the maximal amount of faction base's hitpoints.
      */
-    immutable double factionBaseLife;
+    double factionBaseLife;
     /**
      * Returns: the maximal range (between units' centers), at which a faction base can attack other units.
      */
-    immutable double factionBaseAttackRange;
+    double factionBaseAttackRange;
     /**
      * Returns: the damage of one attack of a faction base.
      */
-    immutable int factionBaseDamage;
+    int factionBaseDamage;
     /**
      * Returns: the minimal possible interval between any two attacks of a faction base.
      */
-    immutable int factionBaseCooldownTicks;
+    int factionBaseCooldownTicks;
     /**
-     * Returns: the duration of the `Burning` status.
+     * Returns: the duration of the `burning` status.
      */
-    immutable int burningDurationTicks;
+    int burningDurationTicks;
     /**
-     * Returns: the total damage of the `Burning` status.
+     * Returns: the total damage of the `burning` status.
      */
-    immutable int burningSummaryDamage;
+    int burningSummaryDamage;
     /**
-     * Returns: the duration of the `Empowered` status.
+     * Returns: the duration of the `empowered` status.
      */
-    immutable int empoweredDurationTicks;
+    int empoweredDurationTicks;
     /**
-     * Returns: the damage multiplier of empowered living unit. Dot (damage over time) is excluded.
+     * Returns: the damage multiplier of empowered living unit. dot (damage over time) is excluded.
      */
-    immutable double empoweredDamageFactor;
+    double empoweredDamageFactor;
     /**
-     * Returns: the duration of the `Frozen` status.
+     * Returns: the duration of the `frozen` status.
      */
-    immutable int frozenDurationTicks;
+    int frozenDurationTicks;
     /**
-     * Returns: the duration of the `Hastened` status.
+     * Returns: the duration of the `hastened` status.
      */
-    immutable int hastenedDurationTicks;
+    int hastenedDurationTicks;
     /**
-     * Returns: the `Hastened` status duration multiplier (in case of taking a bonus).
+     * Returns: the `hastened` status duration multiplier (in case of taking a bonus).
      */
-    immutable double hastenedBonusDurationFactor;
+    double hastenedBonusDurationFactor;
     /**
      * Returns: the relative move speed boost of a hastened unit.
      * $(BR)
      * The maximal possible wizard speed is
      * `1.0 + 4.0 * movementBonusFactorPerSkillLevel + hastenedMovementBonusFactor` of the base speed.
      */
-    immutable double hastenedMovementBonusFactor;
+    double hastenedMovementBonusFactor;
     /**
      * Returns: the relative turn speed boost of a hastened unit.
      */
-    immutable double hastenedRotationBonusFactor;
+    double hastenedRotationBonusFactor;
     /**
-     * Returns: the `Shielded` duration.
+     * Returns: the `shielded` duration.
      */
-    immutable int shieldedDurationTicks;
+    int shieldedDurationTicks;
     /**
-     * Returns: the `Shielded` status duration multiplier (in case of taking a bonus).
+     * Returns: the `shielded` status duration multiplier (in case of taking a bonus).
      */
-    immutable double shieldedBonusDurationFactor;
+    double shieldedBonusDurationFactor;
     /**
-     * Returns: the damage part absorbed by shield. Dot (damage over time) is excluded.
+     * Returns: the damage part absorbed by shield. dot (damage over time) is excluded.
      */
-    immutable double shieldedDirectDamageAbsorptionFactor;
+    double shieldedDirectDamageAbsorptionFactor;
     /**
      * Returns: the range of an aura skill.
      */
-    immutable double auraSkillRange;
+    double auraSkillRange;
     /**
      * Returns: the absolute increase of the wizard cast range for each learned skill, which is one of the
-     * prerequisites of the `AdvancedMagicMissile` skill.
+     * prerequisites of the `advancedMagicMissile` skill.
      */
-    immutable double rangeBonusPerSkillLevel;
+    double rangeBonusPerSkillLevel;
     /**
      * Returns: the absolute increase of the wizard spell damage for each learned skill, which is one of the
-     * prerequisites of the `FrostBolt` skill. Dot (damage over time) is excluded.
+     * prerequisites of the `frostBolt` skill. dot (damage over time) is excluded.
      */
-    immutable int magicalDamageBonusPerSkillLevel;
+    int magicalDamageBonusPerSkillLevel;
     /**
      * Returns: the absolute increase of the wizard staff damage for each learned skill, which is one of the
-     * prerequisites of the `Fireball` skill.
+     * prerequisites of the `fireball` skill.
      */
-    immutable int staffDamageBonusPerSkillLevel;
+    int staffDamageBonusPerSkillLevel;
     /**
      * Returns: the relative increase of the move speed for each learned skill, which is one of the
-     * prerequisites of the `Haste` skill.
+     * prerequisites of the `haste` skill.
      * $(BR)
      * The maximal possible wizard speed is
      * `1.0 + 4.0 * movementBonusFactorPerSkillLevel + hastenedMovementBonusFactor` of the base speed.
      */
-    immutable double movementBonusFactorPerSkillLevel;
+    double movementBonusFactorPerSkillLevel;
     /**
      * Returns: the absolute decrease of the incoming magical damage for each learned skill, which is one of the
-     * prerequisites of the `Shield` skill. Dot (damage over time) is excluded.
+     * prerequisites of the `shield` skill. dot (damage over time) is excluded.
      */
-    immutable int magicalDamageAbsorptionPerSkillLevel;
+    int magicalDamageAbsorptionPerSkillLevel;
 
-    immutable this (
+    this (
         long randomSeed,
         int tickCount,
         double mapSize,
@@ -601,7 +601,7 @@ class Game
         int staffDamage,
         double staffSector,
         double staffRange,
-        int [] levelUpXpValues,
+        immutable int [] levelUpXpValues,
         double minionRadius,
         double minionVisionRange,
         double minionSpeed,
@@ -713,7 +713,7 @@ class Game
         this.staffDamage = staffDamage;
         this.staffSector = staffSector;
         this.staffRange = staffRange;
-        this.levelUpXpValues = levelUpXpValues.idup;
+        this.levelUpXpValues = levelUpXpValues;
         this.minionRadius = minionRadius;
         this.minionVisionRange = minionVisionRange;
         this.minionSpeed = minionSpeed;

@@ -6,48 +6,48 @@ import std.math;
 /**
  * Base class that describes any object (``unit'') in the game world.
  */
-abstract class Unit
+abstract immutable class Unit
 {
     /**
-     * Returns: the unique unit Id.
+     * Returns: the unique unit id.
      */
-    immutable long id;
+    long id;
     /**
      * Returns: the X of the unit's center. The X-axis is directed from left to right.
      */
-    immutable double x;
+    double x;
     /**
      * Returns: the Y of the unit's center. The Y-axis is directed downward.
      */
-    immutable double y;
+    double y;
     /**
      * Returns: the X speed component or the last tick X-coordinate change, if this unit can instantly change its speed.
      * The X-axis is directed from left to right.
      */
-    immutable double speedX;
+    double speedX;
     /**
      * Returns: the Y speed component or the last tick Y-coordinate change, if this unit can instantly change its speed.
      * The Y-axis is directed downward.
      */
-    immutable double speedY;
+    double speedY;
     /**
      * Returns: the turn angle in radians of this unit. Direction of the X-axis has zero angle.
      * Positive angle corresponds to the rotation in a clockwise direction.
      */
-    immutable double angle;
+    double angle;
     /**
      * Returns: the faction of this unit.
      */
-    immutable Faction faction;
+    Faction faction;
 
-    protected immutable this (
+    protected this (
         long id,
         double x,
         double y,
         double speedX,
         double speedY,
         double angle,
-        immutable (Faction) faction)
+        immutable Faction faction)
     {
         this.id = id;
         this.x = x;
@@ -90,7 +90,7 @@ abstract class Unit
      * The angle is in range of `-PI` to `PI` both inclusive.
      */
     double getAngleTo (
-        immutable (Unit) unit) const
+        immutable Unit unit) const
     {
         return getAngleTo (unit.x, unit.y);
     }
@@ -114,7 +114,7 @@ abstract class Unit
      * Returns: the range between the center of the specified unit and the center of this unit.
      */
     double getDistanceTo (
-        immutable (Unit) unit) const
+        immutable Unit unit) const
     {
         return getDistanceTo (unit.x, unit.y);
     }

@@ -5,40 +5,40 @@ import model.faction;
 /**
  * The instance of this class contains all the data about player state.
  */
-class Player
+immutable class Player
 {
     /**
-     * Returns: the unique player Id.
+     * Returns: the unique player id.
      */
-    immutable long id;
+    long id;
     /**
      * Returns: `true` if and only if this is your player.
      */
-    immutable bool me;
+    bool me;
     /**
      * Returns: the name of the player.
      */
-    immutable string name;
+    string name;
     /**
      * Returns: `true` if and only if the strategy of this player is crashed.
      */
-    immutable bool strategyCrashed;
+    bool strategyCrashed;
     /**
      * Returns: the amount of score points.
      */
-    immutable int score;
+    int score;
     /**
      * Returns: the faction of this player.
      */
-    immutable Faction faction;
+    Faction faction;
 
-    immutable this (
+    this (
         long id,
         bool me,
         string name,
         bool strategyCrashed,
         int score,
-        immutable (Faction) faction)
+        immutable Faction faction)
     {
         this.id = id;
         this.me = me;

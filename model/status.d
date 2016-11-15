@@ -5,32 +5,32 @@ import model.status_type;
 /**
  * A magical status, affecting living unit.
  */
-class Status
+immutable class Status
 {
     /**
-     * Returns: the unique status Id.
+     * Returns: the unique status id.
      */
-    immutable long id;
+    long id;
     /**
      * Returns: the status type.
      */
-    immutable StatusType type;
+    StatusType type;
     /**
-     * Returns: the Id of the wizard casted this status or `-1`.
+     * Returns: the id of the wizard casted this status or `-1`.
      */
-    immutable long wizardId;
+    long wizardId;
     /**
-     * Returns: the Id of the player, which unit casted this status, or `-1`.
+     * Returns: the id of the player, which unit casted this status, or `-1`.
      */
-    immutable long playerId;
+    long playerId;
     /**
      * Returns: the remaining status duration.
      */
-    immutable int remainingDurationTicks;
+    int remainingDurationTicks;
 
-    immutable this (
+    this (
         long id,
-        immutable (StatusType) type,
+        immutable StatusType type,
         long wizardId,
         long playerId,
         int remainingDurationTicks)

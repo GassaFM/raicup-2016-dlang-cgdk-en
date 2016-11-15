@@ -8,27 +8,32 @@ import model.status;
 enum StatusType : byte
 {
     /**
-     * A living unit receives some damage each time tick.
+     * Default value.
      */
-    Burning,
+    unknown = -1,
 
     /**
-     * A living unit inflicts more damage than usually, excluding Dot (damage over time).
+     * A living unit receives some damage each time tick.
      */
-    Empowered,
+    burning,
+
+    /**
+     * A living unit inflicts more damage than usually, excluding dot (damage over time).
+     */
+    empowered,
 
     /**
      * A living unit can not move or perform any actions.
      */
-    Frozen,
+    frozen,
 
     /**
      * A living unit has increased move and turn speed.
      */
-    Hastened,
+    hastened,
 
     /**
-     * A living unit receives less damage than usually, excluding Dot (damage over time).
+     * A living unit receives less damage than usually, excluding dot (damage over time).
      */
-    Shielded
+    shielded
 }

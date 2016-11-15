@@ -8,15 +8,20 @@ import model.projectile;
 enum ProjectileType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * A small piece of pure energy, that inflicts damage to a living unit upon a direct hit.
      */
-    MagicMissile,
+    magicMissile,
 
     /**
      * Inflicts damage upon a direct hit and freezes a target for `game.frozenDurationTicks`.
      * A frozen unit can not move or perform any actions.
      */
-    FrostBolt,
+    frostBolt,
 
     /**
      * Explodes when reaching maximal cast range or upon a collision with living unit.
@@ -24,10 +29,10 @@ enum ProjectileType : byte
      * `game.fireballExplosionMinDamageRange + livingUnit.radius`.
      * The greater the distance, the less the instant damage.
      */
-    Fireball,
+    fireball,
 
     /**
      * Sharp thing flying at high speed. Inflicts damage upon a direct hit.
      */
-    Dart
+    dart
 }

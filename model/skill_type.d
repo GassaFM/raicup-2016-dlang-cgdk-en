@@ -20,171 +20,176 @@ module model.skill_type;
 enum SkillType : byte
 {
     /**
+     * Default value.
+     */
+    unknown = -1,
+
+    /**
      * Passive skill. Increases cast range by `game.rangeBonusPerSkillLevel`.
      */
-    RangeBonusPassive1,
+    rangeBonusPassive1,
 
     /**
      * Aura. Increases cast range by `game.rangeBonusPerSkillLevel`.
      * $(BR)
-     * Requires `RangeBonusPassive1`.
+     * Requires `rangeBonusPassive1`.
      */
-    RangeBonusAura1,
+    rangeBonusAura1,
 
     /**
      * Passive skill. Increases cast range by `2.0 * game.rangeBonusPerSkillLevel`.
      * $(BR)
-     * Requires `RangeBonusAura1`.
+     * Requires `rangeBonusAura1`.
      */
-    RangeBonusPassive2,
+    rangeBonusPassive2,
 
     /**
      * Aura. Increases cast range by `2.0 * game.rangeBonusPerSkillLevel`.
      * $(BR)
-     * Requires `RangeBonusPassive2`.
+     * Requires `rangeBonusPassive2`.
      */
-    RangeBonusAura2,
+    rangeBonusAura2,
 
     /**
-     * Passive skill. Removes the `MagicMissile` spell delay.
+     * Passive skill. Removes the `magicMissile` spell delay.
      * The common action delay `game.wizardActionCooldownTicks` still applies.
      * $(BR)
-     * Requires `RangeBonusAura2`.
+     * Requires `rangeBonusAura2`.
      */
-    AdvancedMagicMissile,
+    advancedMagicMissile,
 
     /**
      * Passive skill. Increases instant magical damage by `game.magicalDamageBonusPerSkillLevel`.
      */
-    MagicalDamageBonusPassive1,
+    magicalDamageBonusPassive1,
 
     /**
      * Aura. Increases instant magical damage by `game.magicalDamageBonusPerSkillLevel`.
      * $(BR)
-     * Requires `MagicalDamageBonusPassive1`.
+     * Requires `magicalDamageBonusPassive1`.
      */
-    MagicalDamageBonusAura1,
+    magicalDamageBonusAura1,
 
     /**
      * Passive skill. Increases instant magical damage by `2.0 * game.magicalDamageBonusPerSkillLevel`.
      * $(BR)
-     * Requires `MagicalDamageBonusAura1`.
+     * Requires `magicalDamageBonusAura1`.
      */
-    MagicalDamageBonusPassive2,
+    magicalDamageBonusPassive2,
 
     /**
      * Aura. Increases instant magical damage by `2.0 * game.magicalDamageBonusPerSkillLevel`.
      * $(BR)
-     * Requires `MagicalDamageBonusPassive2`.
+     * Requires `magicalDamageBonusPassive2`.
      */
-    MagicalDamageBonusAura2,
+    magicalDamageBonusAura2,
 
     /**
-     * Active skill. A wizard can now use the `FrostBolt` spell.
+     * Active skill. A wizard can now use the `frostBolt` spell.
      * $(BR)
-     * Requires `MagicalDamageBonusAura2`.
+     * Requires `magicalDamageBonusAura2`.
      */
-    FrostBolt,
+    frostBolt,
 
     /**
      * Passive skill. Increases staff damage by `game.staffDamageBonusPerSkillLevel`.
      */
-    StaffDamageBonusPassive1,
+    staffDamageBonusPassive1,
 
     /**
      * Aura. Increases staff damage by  `game.staffDamageBonusPerSkillLevel`.
      * $(BR)
-     * Requires `StaffDamageBonusPassive1`.
+     * Requires `staffDamageBonusPassive1`.
      */
-    StaffDamageBonusAura1,
+    staffDamageBonusAura1,
 
     /**
      * Passive skill. Increases staff damage by `2.0 * game.staffDamageBonusPerSkillLevel`.
      * $(BR)
-     * Requires `StaffDamageBonusAura1`.
+     * Requires `staffDamageBonusAura1`.
      */
-    StaffDamageBonusPassive2,
+    staffDamageBonusPassive2,
 
     /**
      * Aura. Increases staff damage by `2.0 * game.staffDamageBonusPerSkillLevel`.
      * $(BR)
-     * Requires `StaffDamageBonusPassive2`.
+     * Requires `staffDamageBonusPassive2`.
      */
-    StaffDamageBonusAura2,
+    staffDamageBonusAura2,
 
     /**
-     * Active skill. A wizard can now use the `Fireball` spell.
+     * Active skill. A wizard can now use the `fireball` spell.
      * $(BR)
-     * Requires `StaffDamageBonusAura2`.
+     * Requires `staffDamageBonusAura2`.
      */
-    Fireball,
+    fireball,
 
     /**
      * Passive skill. Increases movement speed by `1.0 + game.movementBonusFactorPerSkillLevel` times.
      * $(BR)
-     * Summarily `MovementBonusFactorPassive2` and `MovementBonusFactorAura2` increase movement
+     * Summarily `movementBonusFactorPassive2` and `movementBonusFactorAura2` increase movement
      * speed by `1.0 + 4.0 * game.movementBonusFactorPerSkillLevel` times.
      */
-    MovementBonusFactorPassive1,
+    movementBonusFactorPassive1,
 
     /**
      * Aura. Increases movement speed by `1.0 + game.movementBonusFactorPerSkillLevel` times.
      * $(BR)
-     * Requires `MovementBonusFactorPassive1`.
+     * Requires `movementBonusFactorPassive1`.
      */
-    MovementBonusFactorAura1,
+    movementBonusFactorAura1,
 
     /**
      * Passive skill. Increases movement speed by `1.0 + 2.0 * game.movementBonusFactorPerSkillLevel` times.
      * $(BR)
-     * Requires `MovementBonusFactorAura1`.
+     * Requires `movementBonusFactorAura1`.
      */
-    MovementBonusFactorPassive2,
+    movementBonusFactorPassive2,
 
     /**
      * Aura. Increases movement speed by `1.0 + 2.0 * game.movementBonusFactorPerSkillLevel` times.
      * $(BR)
-     * Requires `MovementBonusFactorPassive2`.
+     * Requires `movementBonusFactorPassive2`.
      */
-    MovementBonusFactorAura2,
+    movementBonusFactorAura2,
 
     /**
-     * Active skill. A wizard can now use the `Haste` spell.
+     * Active skill. A wizard can now use the `haste` spell.
      * $(BR)
-     * Requires `MovementBonusFactorAura2`.
+     * Requires `movementBonusFactorAura2`.
      */
-    Haste,
+    haste,
 
     /**
      * Passive skill. Decreases received magical damage by `game.magicalDamageAbsorptionPerSkillLevel`.
      */
-    MagicalDamageAbsorptionPassive1,
+    magicalDamageAbsorptionPassive1,
 
     /**
      * Aura. Decreases received magical damage by `game.magicalDamageAbsorptionPerSkillLevel`.
      * $(BR)
-     * Requires `MagicalDamageAbsorptionPassive1`.
+     * Requires `magicalDamageAbsorptionPassive1`.
      */
-    MagicalDamageAbsorptionAura1,
+    magicalDamageAbsorptionAura1,
 
     /**
      * Passive skill. Decreases received magical damage by `2.0 * game.magicalDamageAbsorptionPerSkillLevel`.
      * $(BR)
-     * Requires `MagicalDamageAbsorptionAura1`.
+     * Requires `magicalDamageAbsorptionAura1`.
      */
-    MagicalDamageAbsorptionPassive2,
+    magicalDamageAbsorptionPassive2,
 
     /**
      * Aura. Decreases received magical damage by `2.0 * game.magicalDamageAbsorptionPerSkillLevel`.
      * $(BR)
-     * Requires `MagicalDamageAbsorptionPassive2`.
+     * Requires `magicalDamageAbsorptionPassive2`.
      */
-    MagicalDamageAbsorptionAura2,
+    magicalDamageAbsorptionAura2,
 
     /**
-     * Active skill. A wizard can now use the `Shield` spell.
+     * Active skill. A wizard can now use the `shield` spell.
      * $(BR)
-     * Requires `MagicalDamageAbsorptionAura2`.
+     * Requires `magicalDamageAbsorptionAura2`.
      */
-    Shield
+    shield
 }

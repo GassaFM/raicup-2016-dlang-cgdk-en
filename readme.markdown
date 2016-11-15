@@ -2,7 +2,7 @@
 
 This package will be supported during the competition (until December 26, 2016)
 
-Translated from: Java CGDK (https://github.com/Russian-AI-Cup-2016/java-cgdk-ru)
+Translated from: Java CGDK (https://github.com/Russian-AI-Cup-2016/java-cgdk-en)
 
 Previous work:
 

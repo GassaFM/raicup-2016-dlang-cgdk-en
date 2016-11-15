@@ -5,6 +5,8 @@ module model.game;
  */
 immutable class Game
 {
+nothrow pure @safe @nogc:
+
     /**
      * Returns: the number that your strategy may use to initialize a generator of random numbers.
      */

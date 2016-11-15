@@ -7,6 +7,8 @@ import model.status_type;
  */
 immutable class Status
 {
+nothrow pure @safe @nogc:
+
     /**
      * Returns: the unique status id.
      */

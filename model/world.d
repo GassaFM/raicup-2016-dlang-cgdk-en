@@ -13,6 +13,8 @@ import model.projectile;
  */
 immutable class World
 {
+nothrow pure @safe @nogc:
+
     /**
      * Returns: the current game tick.
      */

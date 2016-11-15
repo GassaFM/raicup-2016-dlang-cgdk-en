@@ -9,6 +9,8 @@ import model.status;
  */
 abstract immutable class LivingUnit : CircularUnit
 {
+nothrow pure @safe @nogc:
+
     /**
      * Returns: the current amount of hitpoints.
      */

@@ -15,6 +15,8 @@ import model.lane_type;
  */
 immutable class Message
 {
+nothrow pure @safe @nogc:
+
     /**
      * Returns: the order to control the specified lane.
      */

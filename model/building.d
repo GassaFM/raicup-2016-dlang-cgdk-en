@@ -12,6 +12,8 @@ import model.faction;
  */
 immutable class Building : LivingUnit
 {
+nothrow pure @safe @nogc:
+
     /**
      * Returns: the building type.
      */

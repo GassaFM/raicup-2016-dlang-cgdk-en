@@ -9,6 +9,8 @@ import model.skill_type;
  */
 class Move
 {
+nothrow pure @safe @nogc:
+
     /**
      * Sets move speed for one tick.
      * $(BR)
